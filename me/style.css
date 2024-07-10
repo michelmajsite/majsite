@@ -1,0 +1,217 @@
+*{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    font-family: 'Kumbh Sans';
+  }
+  .wrapper{
+    position: fixed;
+    top: 1em;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    background: #000;
+    clip-path: circle(25px at calc(3% - 45px) 45px);
+    transition: all 0.3s ease-in-out;
+  }
+  #active:checked ~ .wrapper{
+    clip-path: polygon(0 0, 30% 0, 30% 350%, 0 100%);
+  }
+
+  .menu-btn{
+    position: relative;
+    width: auto;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: #fff;
+    cursor: pointer;
+    top: 44px;
+    left: 40px;
+    
+    transition: all 0.3s ease-in-out;
+  }
+  #active:checked ~ .menu-btn{
+    color: #fff;
+  }
+  #active:checked ~ .menu-btn i:before{
+    content: "Zamknij";
+    font-size: 15px;
+    font-family: 'Poppins';
+    
+  }
+  .wrapper ul{
+    position: relative;
+    width: 50%;
+    top: 35%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+  }
+  .wrapper ul li{
+    margin: 15px 0;
+  }
+  .wrapper ul li a{
+    color: none;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 5px 30px;
+    color: #fff;
+    border-radius: 50px;
+    background: #000;
+    position: relative;
+    line-height: 50px;
+    transition: all 0.3s ease;
+  }
+  .wrapper ul li a:after{
+    position: absolute;
+    content: "";
+    background: #fff;
+     background: linear-gradient(#ff0000, #ffffff, #f7c900);
+    /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
+    width: 104%;
+    height: 110%;
+    left: -2%;
+    border-radius: 50px;
+    transform: scaleY(0);
+    z-index: -1;
+    animation: rotate 1.5s linear infinite;
+    transition: transform 0.3s ease;
+
+  }
+  .wrapper ul li a:hover:after{
+    transform: scaleY(1);
+  }
+  .wrapper ul li a:hover{
+    color: #fff;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+
+
+  
+img {
+  position: absolute;
+    max-width: 150px;
+    align-items: center;
+    justify-content: center;
+    max-height: 132px;
+    right: 50%;
+    
+}
+
+header {
+  background-color: #000 ;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 132px;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
+}
+.menu a{
+  position: relative;
+  top: 2px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 18px;
+    bottom: 40px;
+    color: #ffffff;
+    padding: 4px 21px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.menu .drugie {
+  color: #858585;
+}
+
+.napisz {
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border: 2px solid white;
+  padding: 6px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  max-width: 180px;
+  font-family: 'Kumbh Sans';
+  font-size: 17px;
+  margin-right: 20px;
+}
+
+.napisz:hover {
+  background: #f8f8f8;
+  color: #000000;
+  transition: 1s;
+}
+
+.socialmediaomnie {
+  position: relative;
+  text-align: center;
+  left: 40px;
+  margin-top: 75px;
+  margin-right: 20px;
+  bottom: 40px;
+  width: 230px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.socialmediaomnie a {
+  position: relative;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+
+}
+
+.socialmediaomnie a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background:#ffffff;
+  z-index: -1;
+  transition: 0.7s;
+}
+
+.socialmediaomnie a:hover {
+  color: #000000;
+} 
+
+.socialmediaomnie a:hover::before {
+width: 100%;
+
+}
+
+
+/* Ukrywanie .menu, gdy .wrapper jest widoczny */
+#active:checked ~ .menu {
+  display: none;
+}
